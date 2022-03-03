@@ -11,6 +11,7 @@ class UsersController extends Controller
 {
     public function __construct(){
         $this->middleware('auth:sanctum')->only('show');
+        $this->middleware('isAdmin')->only([]);;
     }
     public function show(Request $request)
     {

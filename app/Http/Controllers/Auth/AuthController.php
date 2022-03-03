@@ -25,7 +25,6 @@ class AuthController extends Controller
                 'name' => $request->get('name'),
                 'email' => $request->get('email'),
                 'password' => bcrypt( $request->get('password') ),
-                //'avatar' => $gravatar->get()
             ]);
             $token = $user->createToken('myapptoken')->plainTextToken;
             $response = [
@@ -44,8 +43,6 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-
-
         $validator = $request->validate([
             'email' => 'required|string',
             'password' => 'required|string'

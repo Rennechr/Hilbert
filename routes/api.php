@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\API\UsersController;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\RoomsController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,7 +21,7 @@ Route::post('/login', [AuthController::class, 'login']);
 
 
 Route::group(['middleware' => ['auth:sanctum']], function() {
-    //
     Route::get('/user', [UsersController::class, 'show']);
     Route::get('/logout', [AuthController::class, 'logout']);
+    Route::post('/room', [RoomsController::class, 'addRoom']);
 });
