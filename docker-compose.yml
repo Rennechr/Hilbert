@@ -6,7 +6,7 @@ services:
     volumes:
       - "./:/hilbert"
     working_dir: /hilbert
-    command: "php artisan serve --host=0.0.0.0 --port=8000"
+    command: sh -c "php artisan serve --host=0.0.0.0 --port=8000 && php artisan migrate"
     ports:
       - 8000:8000
     build:
