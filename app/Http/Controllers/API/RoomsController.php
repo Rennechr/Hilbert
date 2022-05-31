@@ -1,19 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Room;
+use App\Services\Room\CreateRoom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Services\Room\CreateRoom;
 use function response;
 
 class RoomsController extends Controller
 {
     public function __construct(){
         $this->middleware('auth:sanctum');
-        $this->middleware('isAdmin');
+    }
+    public function getRooms()
+    {
+        return Room::all();
     }
     public function addRoom(Request $request)
     {

@@ -21,7 +21,6 @@ class CreateRoom
         $room->class = $this->data['class'];
         $room->prize = $this->data['prize'];
         $room->save();
-
         return $room;
     }
 }
