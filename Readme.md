@@ -2,19 +2,8 @@
 
 The API is not based on the Biletado-template, and is instead created from scratch.
 
-## Features
-Register:
-
-Login:
-
-Show User:
-
-Logout:
-
-Create Hotel Room:
-
-Book Room:
-
+## API-DOC
+https://app.swaggerhub.com/apis/Rennechr/your-api/1.2
 ## Requirements
 
 The API fulfills the following requirements:
