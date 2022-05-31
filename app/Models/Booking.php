@@ -2,22 +2,22 @@
 
 namespace App\Models;
 
-use Database\Factories\RoomFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
 
-class Room extends Model
+class Booking extends Model
 {
     use HasApiTokens, HasFactory;
-    protected $table = 'rooms';
+    protected $table = 'bookings';
     /**
      * @var mixed
      */
     protected $fillable = [
-        'description',
-        'total_beds',
-        'class',
-        'prize',
+        'room_id',
+        'user_id',
+        'from',
+        'to',
+        'pension',
     ];
 }
